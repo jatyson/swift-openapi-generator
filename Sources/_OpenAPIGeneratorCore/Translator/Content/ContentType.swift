@@ -164,7 +164,7 @@ struct ContentType: Hashable {
         let rawTypeAndSubtype =
             typeAndSubtypeComponent
             .trimmingCharacters(in: .whitespaces)
-        let typeAndSubtype =
+        var typeAndSubtype =
             rawTypeAndSubtype
             .split(separator: "/")
             .map(String.init)

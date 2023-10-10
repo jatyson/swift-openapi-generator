@@ -169,10 +169,17 @@ struct ContentType: Hashable {
             .split(separator: "/")
             .map(String.init)
 	print(rawValue)
+
+	if typeAndSubtype.count != 2 {
+            typeAndSubtype = ["application", "json"]
+ 	}
+/*
         precondition(
             typeAndSubtype.count == 2,
             "Invalid ContentType string, must have 2 components separated by a slash. \(rawValue)"
         )
+*/
+	
         self.originallyCasedType = typeAndSubtype[0]
         self.originallyCasedSubtype = typeAndSubtype[1]
     }

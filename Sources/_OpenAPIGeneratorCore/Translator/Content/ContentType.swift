@@ -168,9 +168,10 @@ struct ContentType: Hashable {
             rawTypeAndSubtype
             .split(separator: "/")
             .map(String.init)
+	print(rawValue)
         precondition(
             typeAndSubtype.count == 2,
-            "Invalid ContentType string, must have 2 components separated by a slash."
+            "Invalid ContentType string, must have 2 components separated by a slash. \(rawValue)"
         )
         self.originallyCasedType = typeAndSubtype[0]
         self.originallyCasedSubtype = typeAndSubtype[1]
